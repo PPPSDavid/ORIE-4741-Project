@@ -4,7 +4,7 @@
 - Elaine Siyang Yu, sy372
 - Annie Cheng, zc375
 ## Project Description
-Image a world where you can see the expected delay time of each flight when you are booking your next trip. You will never need to worry about cancelling plans and missing flights. It would be a game-changer for the aviation indutry.
+Imagine a world where you can see the expected delay time of each flight when you are booking your next trip. You will never need to worry about cancelling plans and missing flights. It would be a game-changer for the aviation indutry.
 
 In this project, we decided to investigate ways to predict US domestic flight delays with data avaliable when
 1. the plane takes off
