@@ -71,6 +71,20 @@ column_dtypes =  {'Year' : 'int',
                    'DivActualElapsedTime': 'float'
                  }
 
+# DataFrame Structure with Weather Data
+columns_of_interest_weather = ['Year', 'Quarter', 'Month', 'DayofMonth', 'DayOfWeek', 'FlightDate',
+       'Reporting_Airline', 'DOT_ID_Reporting_Airline',
+       'Flight_Number_Reporting_Airline', 'Origin', 'OriginCityName',
+       'OriginState', 'Dest', 'DestCityName', 'DestState', 'CRSDepTime',
+       'DepTime', 'DepDelay', 'TaxiOut', 'WheelsOff', 'WheelsOn', 'TaxiIn',
+       'CRSArrTime', 'ArrTime', 'ArrDelay', 'CRSElapsedTime', 'Cancelled',
+       'CancellationCode', 'Diverted', 'Flights', 'Distance', 'DivArrDelay',
+       'DivActualElapsedTime', 'DepTimeLocal', 'DepTimeUTC', 'Severe-Cold',
+       'Fog', 'Hail', 'Rain', 'Snow', 'Storm', 'Other Precipitation',
+       'Severe-Cold_Severity', 'Fog_Severity', 'Hail_Severity',
+       'Rain_Severity', 'Snow_Severity', 'Storm_Severity',
+       'Other Precipitation_Severity']
+
 # US State Time Zones 
 us_states_timezones = {
     'NY' : 'US/Eastern',
