@@ -5,17 +5,17 @@ Since our project requires features from 2 datasets: flight delay data and corre
 2. Weather: If a severe weather event occurs during the scheduled departure time
 3. Departure delay: if the flight is delayed when departing
 
-More features can help us predict delay better, but we also want to predict delay earlier, preferably before passengers board the plane. The features we included can be separated into information that is available before plane takeoff (Long term) and information that is only known when the plane is taking off (Short Term). They will be used in our **2 separate models**. The featurs that are included in Short Term but not in Long Term are the **departure delay** and **weather**, and we expect them to be very informative on whether a plane will arrive later.
+More features can help us predict delay better, but we also want to predict delay before passengers board the plane. Our features can be separated into information that is available before the plane actually depart (Long term) and information that is only known when the plane is taking off (Short Term). They will be used in our **2 separate models**. The featurs that are included in Short Term but not in Long Term are the **departure delay** , and we expect it to be very informative on whether a plane will arrive later.
 
 To restrain the scope of the project, We will perform **classification tasks** on whether a flight will be delayed. We classify delayed flights as those that **departed successfully and arrived later than announced**. How we treat canceled and diverted flights are detailed below. 
 
 We further decided to narrow our project to an analysis of all flights taking off from the **top 10 largest airports** in the US. This results in a reduced 2GB dataset with 9M entries.
 
 #### Canceled Flights and Diverted Flights
-Cancellations and diverted flights are abnormalities we had to decide how to handle them. As canceled flights are canceled before they take off, we decided to exclude canceled flights altogether. For diverted flights, we will only keep flights that eventually reach their destination (as marked by a non-NULL DivArrDelay time) and treat this delay time as a replacement for the normal delay time.
+ As canceled flights are canceled before they take off, we decided to exclude canceled flights altogether. For diverted flights, we will only keep flights that eventually reach their destination and classify whether they like normal flights.
 
 #### Weather
-Our weather data records the start and end times of severe precipitation events recorded by different airports. The reason why we only include severe weather events at scheduled take-off is that it is hard to know the “predicted” landing weather. To avoid future bias and to keep our project manageable, **we decided to only take the weather condition at a given airport at the flight’s expected departure time into consideration**. 
+Our weather data records the start and end times of severe precipitation events recorded by different airports. To avoid future bias and to keep our project manageable, we decided to only take the **weather condition at origination at the flight’s expected departure time** into consideration since it is hard to know the “predicted” destination weather. 
 
 ### Exploratory Data Analysis
 
@@ -70,10 +70,10 @@ For each of the 2 feature sets, we tried 2 simple models: Logistic Regression an
 Clearly, these simple models do not fit the data very well, but they are all better than simply guessing the majority class. We were also able to confirm from the feature importance of decision tree that **departure delay is very informative**.
 
 ### Train, Test, Validation Procedure
-Since in our simple models there is no hyperparameter tuning, we split our dataset using **train-test split**. During the construction of a more complex model with hyperparameters, we will utilize a **train-test-validation split** to make sure our test dataset is always kept hidden from the model training process. Due to the large dataset size, we believe even with such splitting each dataset will contain a sufficient number of rows to achieve sound results.
+We split our dataset using **train-test split**. For hyperparameter tuning, we will utilize a **train-test-validation split** . Due to the large dataset size, we believe even with such splitting each dataset will contain a sufficient number of rows to achieve sound results.
 
 ### Under/Overfitting Concerns
-We observe no significant differences between train and test error. We believe due to the complexity of the flight delay problem and the large sample size we have, our main concern is how to train **a more complex, expressive model** to resolve underfitting. We plan to do this by trying polynomial features for logistic regression and also trying out different boosting/bagging techniques for Trees. We will also try Neural Networks, which should have the most expressiveness.
+We observe **no significant differences** between train and test error. Due to the complexity of the flight delay problem and the large sample size we have, we will focus on how to train **a more complex, expressive model** to resolve **underfitting**. We plan to do this by trying polynomial features for logistic regression and also trying out different boosting/bagging techniques for Trees. We will also try Neural Networks, which should have the most expressiveness.
 
 ### Further Improvement
 We will continue to work on the following area to improve the model:
