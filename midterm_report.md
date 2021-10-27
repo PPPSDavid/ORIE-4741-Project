@@ -1,4 +1,3 @@
-# Midterm Report
 ## Dataset Description
 ### Data Scope and Pre-processing
 Since our project requires features from 2 datasets: flight delay data and corresponding weather data, the temporal scope of the dataset is limited to 2016-2020 (included). After getting rid of unuseful columns and combining corresponding weather data with flights, we decided to keep the following sets of features: 
