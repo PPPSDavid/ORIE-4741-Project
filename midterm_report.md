@@ -21,11 +21,11 @@ Our weather data records the start and end times of severe precipitation events 
 
 ### Null-values
 We listed most relevant missing value features and their percentageas below.
-| Feature | description               | # NA | Percentage in 9142933 data|
-| ------- | --------------------------| -----| ----------|
-| DepDelay| Departure delay in minutes| 721  | 0.00789%    |
-| ArrTime |  arrival time             | 3504 | 0.0383%    |
-| ArrDelay| Arrival delay in minutes  | 21404| 0.2341%    |
+| Feature  | description                | # NA  | Percentage in 9142933 data |
+| -------- | -------------------------- | ----- | -------------------------- |
+| DepDelay | Departure delay in minutes | 721   | 0.00789%                   |
+| ArrTime  | arrival time               | 3504  | 0.0383%                    |
+| ArrDelay | Arrival delay in minutes   | 21404 | 0.2341%                    |
 
 For *DepDelay*, missing values are due to take off on time so we fill them with 0. For *ArrDelay* null values, if the flight is diverted, the delay information is recorded in *DivArrDelay*, otherwise, it's due to arrive on time; therefore we fill with 0 and values from *DivArrDelay* correspondingly. We removed rows without *ArrTime* as they are corrupted data that can’t be used for training.
 
@@ -47,14 +47,25 @@ To sum up, after dealing with null values and feature engineering, we have **898
 As discussed before, we build 2 sets of models: with departure delay and weather ("Short Term" forecast model) and without them ("Long Term" forecast model). We use all features to build these preliminary models.
 
 For each of the 2 feature sets, we tried 2 simple models: Logistic Regression and Decision Tree. The weighted average F-1 score we achieved on the test sample is as follow:
+<table>
+  <tr>
+    <th>Model</th>
+    <td>Logistic (LT)</td>
+    <td>Logistic (ST)</td>
+    <td>Decision Tree (LT)</td>
+    <td>Decision Tree (ST)</td>
+    <td>Dummy (Majority)</td>
+  </tr>
+  <tr>
+    <th>Weighted F-1 Score</th>
+    <td>0.57</td>
+    <td>0.82</td>
+    <td>0.56</td>
+    <td>0.82</td>
+    <td>0.49</td>
+  </tr>
+</table>
 
-| Model              | Weighted F-1 Score |
-| ------------------ | ------------------ |
-| Logistic (LT)      | 0.57               |
-| Logistic (ST)      | 0.82               |
-| Decision Tree (LT) | 0.56               |
-| Decision Tree (ST) | 0.82               |
-| Dummy (Majority)   | 0.49               |
 
 Clearly, these simple models do not fit the data very well, but they are all better than simply guessing the majority class. We were also able to confirm from the feature importance of decision tree that **departure delay is very informative**.
 
