@@ -33,6 +33,7 @@ For each of the 2 feature sets, we tried 2 simple models: Logistic Regression an
 | Logistic (ST)      | 0.82               |
 | Decision Tree (LT) | 0.56               |
 | Decision Tree (ST) | 0.82               |
+| Dummy (Majority)   | 0.49               |
 
 Clearly, these simple models do not fit the data very well, but they are all better than simply guessing the majority class. We were also able to confirm from the feature importance of decision tree that **departure delay is very informative**.
 
