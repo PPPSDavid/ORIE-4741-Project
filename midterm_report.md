@@ -28,12 +28,12 @@ As discussed before, we build 2 sets of models: with departure delay ("Short Ter
 
 For each of the 2 feature sets, we tried 2 simple models: Logistic Regression and Decision Tree. The weighted average F-1 score we achieved on the test sample is as follow:
 
-| Model                            | F-1 Score |
-| -------------------------------- | --------- |
-| Logistic (Without DepDelay)      | 0.57      |
-| Logistic (DepDelay)              | 0.82      |
-| Decision Tree (Without DepDelay) | 0.56      |
-| Decision Tree (DepDelay)         | 0.82      |
+| Model                            | Weighted F-1 Score |
+| -------------------------------- | ------------------ |
+| Logistic (Without DepDelay)      | 0.57               |
+| Logistic (DepDelay)              | 0.82               |
+| Decision Tree (Without DepDelay) | 0.56               |
+| Decision Tree (DepDelay)         | 0.82               |
 
 Clearly, these simple models do not fit the data very well, but we were able to confirm from the feature importance of decision tree that **departure delay is very informative**.
 
