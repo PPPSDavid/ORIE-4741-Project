@@ -19,8 +19,29 @@ Our weather data records the start and end times of severe precipitation events 
 
 ### Exploratory Data Analysis
 
-## Feature engineering and Null-values
-Need to mention total number of features after hot-encoding categorical features.
+### Null-values
+We listed most relevant missing value features and their percentageas below.
+| Feature | description               | # NA | Percentage in 9142933 data|
+| ------- | --------------------------| -----| ----------|
+| DepDelay| Departure delay in minutes| 721  | 0.00789%    |
+| ArrTime |  arrival time             | 3504 | 0.0383%    |
+| ArrDelay| Arrival delay in minutes  | 21404| 0.2341%    |
+
+For *DepDelay*, missing values are due to take off on time so we fill them with 0. For *ArrDelay* null values, if the flight is diverted, the delay information is recorded in *DivArrDelay*, otherwise, it's due to arrive on time; therefore we fill with 0 and values from *DivArrDelay* correspondingly. We removed rows without *ArrTime* as they are corrupted data that can’t be used for training.
+
+### Feature engineering
+We listed several most important feature engineering steps as below:
+
+1. **Weather related**: 
+For condition severity, each weather condition (rain, fog, etc.) has 5 possible values: “NA” (no), “Light”, “Moderate”, “Heavy” and “Severe” to represent how serious the condition is. Thus, we used real encoding from 0 (NA) to 4 (Severe) for indication.
+2. **Time related**:
+For *DepTime*, if we turn each take off time into a category by one-hot , the number of features will be too large and leads to overfitting. Therefore, we matched each *DepTime* into midnight (0-6), morning(6-12), afternoon (12-18) and night (18-24) and then did one-hot encoding on these 4 categories instead. For flight date, we pick *Quarter* and *DayofWeek* as categorical data and encode with one-hot.
+3. **Airline related**:
+We condier airline company to be more representative than flight number in prediction. Thus, we encoded *Reporting_Airline* by one-hot and dropped *Flight_Number_Reporting_Airline*. 
+4. **Location related**:
+We first encoded *Origin* (origin airpot) by one-hot. Then for arrival airport, there are too many values which may possibly lead to overfitting. Thus, we decided to try two versions of one-hot encoding, one for *DestState* (arrival state) as destination category and one for *Dest* (arrival airport) as destination category.
+
+To sum up, after dealing with null values and feature engineering, we have **8988665 rows of data**. For version 1(*DestState*), we have **112 features** and for version 2(*Dest*), we have **382 features**.
 
 ## Preliminary Models and Analysis
 As discussed before, we build 2 sets of models: with departure delay and weather ("Short Term" forecast model) and without them ("Long Term" forecast model). We use all features to build these preliminary models.
