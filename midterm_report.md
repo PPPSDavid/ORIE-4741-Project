@@ -21,9 +21,10 @@ Our weather data records the start and end times of severe precipitation events 
 ### Exploratory Data Analysis
 
 ## Feature engineering and Null-values
+Need to mention total number of features after hot-encoding categorical features.
 
 ## Preliminary Models and Analysis
-As discussed before, we build 2 sets of models: with departure delay (‘Short Term” forecast model) and without departure delay (Long Term” forecast model) and will evaluate them separately in the following project.
+As discussed before, we build 2 sets of models: with departure delay ("Short Term" forecast model) and without departure delay ("Long Term" forecast model) and will evaluate them separately in the following project. We use all features to build these preliminary models.
 
 For each of the 2 feature sets, we tried 2 simple models: Logistic Regression and Decision Tree. The weighted average F-1 score we achieved on the test sample is as follow:
 
@@ -34,10 +35,21 @@ For each of the 2 feature sets, we tried 2 simple models: Logistic Regression an
 | Decision Tree (Without DepDelay) | 0.56      |
 | Decision Tree (DepDelay)         | 0.82      |
 
-Clearly, these simple models do not fit the data very well, but we were able to confirm from the feature importance that **departure delay is very informative**.
+Clearly, these simple models do not fit the data very well, but we were able to confirm from the feature importance of decision tree that **departure delay is very informative**.
 
 ### Train, Test, Validation Procedure
-Since in our simple models there is no hyperparameter tuning, we split our dataset using **train-test split**. During the construction of a more complex model with hyperparameters, we will utilize a train-test-validation split to make sure our test dataset is always kept hidden from the model training process. Due to the large dataset size, we believe even with such splitting each dataset will contain a sufficient number of rows to achieve sound results.
+Since in our simple models there is no hyperparameter tuning, we split our dataset using **train-test split**. During the construction of a more complex model with hyperparameters, we will utilize a **train-test-validation split** to make sure our test dataset is always kept hidden from the model training process. Due to the large dataset size, we believe even with such splitting each dataset will contain a sufficient number of rows to achieve sound results.
 
 ### Under/Overfitting Concerns
 We observe no significant differences between train and test error. We believe due to the complexity of the flight delay problem and the large sample size we have, our main concern is how to train **a more complex, expressive model** to resolve underfitting. We plan to do this by trying polynomial features for logistic regression and also trying out different boosting/bagging techniques for Trees. We will also try Neural Networks, which should have the most expressiveness.
+
+### Further Improvement
+We will continue to work on the following area to improve the model:
+1. Better metrics, weight false positive and false negatives differently.
+2. Explore the effect of balancing dataset before training
+3. Introduce more complex models, like boosting, bagging, neural networks, etc.
+4. Re-visit the origin/destination features and see if any alternative encoding (latitude/longitude, etc.) can improve the model.
+5. Re-visit the weather data and see if we can add more destination weather features to the model.
+6. Run Feature Selection or PCA before training to reduce data size and increase result interpretability.
+
+We will also compare the result of our two models and see if we can shorten the gap in accuracy between predictions using short-term and long-term models. Our desired goal is to have a model that can predict delay using only long-term features and is as good as the one using departure delay.
