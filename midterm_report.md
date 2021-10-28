@@ -67,7 +67,7 @@ For each of the 2 feature sets, we tried 2 simple models: Logistic Regression an
 </table>
 
 
-Clearly, these simple models do not fit the data very well, but they are all better than simply guessing the majority class. We were also able to confirm from the feature importance of decision tree that **departure delay is very informative**.
+Clearly, these simple models do not fit the data very well, but they are all better than simply guessing the majority class. We were also able to confirm from the feature importance of decision tree that **departure delay is very informative**. We also observed that one-hot encoding of destination states is not very informative, which makes us decide to try Lat-Lon representation instead in the following project.
 
 ### Train, Test, Validation Procedure
 We split our dataset using **train-test split**. For hyperparameter tuning, we will utilize a **train-test-validation split** . Due to the large dataset size, we believe even with such splitting each dataset will contain a sufficient number of rows to achieve sound results.
