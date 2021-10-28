@@ -5,9 +5,9 @@ Our project utilizes features from 2 datasets: flight delay data and correspondi
 2. Weather: If a severe weather event occurs during the scheduled departure time
 3. Departure delay: if the flight is delayed when departing
 
-More features can help us predict delay better, but we also want to predict delay before passengers board the plane. Our features can be separated into information that is available before the plane actually depart (Long term) and information that is only known when the plane is taking off (Short Term). They will be used in our **2 separate models**. The featurs that are included in Short Term but not in Long Term are the **departure delay** , and we expect it to be very informative on whether a plane will arrive later.
-
 To restrain the scope of the project, We will perform **classification tasks** on whether a flight will be delayed. We classify delayed flights as those that **departed successfully and arrived later than announced**. How we treat canceled and diverted flights are detailed below. 
+
+More features can help us predict delay better, but we also want to predict delay before passengers board the plane. Our features can be separated into information that is available before the plane actually depart (Long term) and information that is only known when the plane is taking off (Short Term). They will be used in our **2 separate models**. The featurs that are included in Short Term but not in Long Term is the **departure delay** , and we expect it to be very informative on whether a plane will arrive later.
 
 We further decided to narrow our project to an analysis of all flights taking off from the **top 10 largest airports** in the US. This results in a reduced 2GB dataset with 9M entries.
 
