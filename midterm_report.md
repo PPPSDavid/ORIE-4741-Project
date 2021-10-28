@@ -12,10 +12,10 @@ More features can help us predict delay better, but we also want to predict dela
 We further decided to narrow our project to an analysis of all flights taking off from the **top 10 largest airports** in the US. This results in a reduced 2GB dataset with 9M entries.
 
 #### Canceled Flights and Diverted Flights
- As canceled flights are canceled before they take off, we decided to exclude canceled flights altogether. For diverted flights, we will only keep flights that eventually reach their destination and classify whether they like normal flights.
+ As canceled flights are canceled before they take off, we decided to exclude canceled flights altogether. For diverted flights, we will only keep flights that eventually reach their destination and classify whether they delay like normal flights.
 
 #### Weather
-Our weather data records the start and end times of severe precipitation events recorded by different airports. To avoid future bias and to keep our project manageable, we decided to only take the **weather condition at origination at the flight’s expected departure time** into consideration since it is hard to know the “predicted” destination weather. 
+Our weather data records the start and end times of severe precipitation events recorded by different airports. To avoid future bias and to keep our project manageable, we decided to only consider the **weather condition at origination of a flight during its expected departure time** into consideration since it is hard to know the “predicted” destination weather. We do plan to explore how to include more weather information of the destination in the full report.
 
 ### Exploratory Data Analysis
 
