@@ -102,6 +102,6 @@ We will continue to work on the following area to improve the model:
 We will also compare the result of our two models and see if we can shorten the gap in accuracy between predictions using short-term and long-term information. Our desired goal is to have a model that can predict delay using only long-term features and is as good as the one using departure delay.
 
 ## Appendix
-![Percentage of Flight Delay by Month](https://github.com/PPPSDavid/ORIE-4741-Project/blob/main/images/iamge_2.png) ![Average Flight Delay by Month](https://github.com/PPPSDavid/ORIE-4741-Project/blob/main/images/image_3.png)
+![Percentage of Flight Delay by Month](https://github.com/PPPSDavid/ORIE-4741-Project/blob/main/images/image_2.png) ![Average Flight Delay by Month](https://github.com/PPPSDavid/ORIE-4741-Project/blob/main/images/image_3.png)
 ![Percentage of Flight Delay by Airline](https://github.com/PPPSDavid/ORIE-4741-Project/blob/main/images/image_4.png) ![Average Flight Delay by Airline](https://github.com/PPPSDavid/ORIE-4741-Project/blob/main/images/image_5.png)
 ![Percentage of Flight Delay by Origination Airport](https://github.com/PPPSDavid/ORIE-4741-Project/blob/main/images/image_6.png) ![Average Flight Delay by Origination Airport](https://github.com/PPPSDavid/ORIE-4741-Project/blob/main/images/image_7.png)
