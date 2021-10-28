@@ -32,7 +32,7 @@ We first look at the *ArrDelay* column since this is the one we want to predict.
 
 The following graph shows the distribution of arrival time delay in the [-250, 250] time interval.
 
-![Getting Started](./images/img_1.jpg)
+![Figure 1](./images/img_1.jpg)
 
 Note that we found the correlation between *ArrDelay* and *DepDelay* is .91, indicating there's a high correlation. So when we include departure delay as a feature to predict arrival delay for the short term model, we would expect to see a high weight on *DepDelay*.
 
