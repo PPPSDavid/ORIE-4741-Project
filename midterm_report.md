@@ -1,6 +1,6 @@
 ## Dataset Description
 ### Data Scope and Pre-processing
-Since our project requires features from 2 datasets: flight delay data and corresponding weather data, the temporal scope of the dataset is limited to 2016-2020 (included). After getting rid of unuseful columns and combining corresponding weather data with flights, we decided to keep the following sets of features: 
+Our project utilizes features from 2 datasets: flight delay data and corresponding weather data. The temporal scope of the dataset is limited to 2016-2020 (included). After getting rid of unuseful columns and combining corresponding weather data with flights, we decided to keep the following sets of features: 
 1. Flight Facts: including start, destination airport, operating airline, time of scheduled departure, flight time, etc. 
 2. Weather: If a severe weather event occurs during the scheduled departure time
 3. Departure delay: if the flight is delayed when departing
