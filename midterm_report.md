@@ -36,7 +36,7 @@ The following graph shows the distribution of arrival time delay in the [-250, 2
 
 Note that we found the correlation between *ArrDelay* and *DepDelay* is .91, indicating there's a high correlation. So when we include departure delay as a feature to predict arrival delay for the short term model, we would expect to see a high weight on *DepDelay*.
 
-To help with our further analysis, we added an addition column *is_delay* column that contains a boolean variable returning True if the flight was delayed. Now we want to look at the delay time distribution by: *Month*, *Reporting_Airline*, and *Origin_Airport*.
+To help with our further analysis, we added an addition column *is_delay* column that contains a boolean variable returning True if the flight was delayed. Now we want to look at the delay time distribution by: *Month*, *Reporting_Airline*, and *Origin_Airport*. *(See Appendix)*
 
 First, we look at the month distribution. We see that the total number of flights is considerably higher in December and January. We presume that this is due to traveling around Christmas times. However, when we look at the percentage of delayed flights, as well as the average flight delay time, we see the most delays during the summer: June, July, and August. This is a common time for family trips and vacation travels. See Figure 2 and 3 in Appendix.
 
