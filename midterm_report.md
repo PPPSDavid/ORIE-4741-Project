@@ -17,8 +17,6 @@ We further decided to narrow our project to an analysis of all flights taking of
 #### Weather
 Our weather data records the start and end times of severe precipitation events recorded by different airports. To avoid future bias and to keep our project manageable, we decided to only take the **weather condition at origination at the flight’s expected departure time** into consideration since it is hard to know the “predicted” destination weather. 
 
-### Exploratory Data Analysis
-
 ### Null-values
 We listed most relevant missing value features and their percentageas below.
 | Feature  | description                | # NA  | Percentage in 9142933 data |
@@ -28,6 +26,23 @@ We listed most relevant missing value features and their percentageas below.
 | ArrDelay | Arrival delay in minutes   | 21404 | 0.2341%                    |
 
 For *DepDelay*, missing values are due to take off on time so we fill them with 0. For *ArrDelay* null values, if the flight is diverted, the delay information is recorded in *DivArrDelay*, otherwise, it's due to arrive on time; therefore we fill with 0 and values from *DivArrDelay* correspondingly. We removed rows without *ArrTime* as they are corrupted data that can’t be used for training.
+
+### Exploratory Data Analysis
+We first look at the *ArrDelay* column since this is the one we want to predict. We see that there are around 9 million data points. The average delay time of all flights is about 4 minutes, and 37% of of the total flihgts were delayed. Negative delay time indicates that the flight arrived before the planned arrival time.
+
+The following graph shows the distribution of arrival time delay in the [-250, 250] time interval.
+
+![Figure 1](images/img_1.jpg)
+
+Note that we found the correlation between *ArrDelay* and *DepDelay* is .91, indicating there's a high correlation. So when we include departure delay as a feature to predict arrival delay for the short term model, we would expect to see a high weight on *DepDelay*.
+
+To help with our further analysis, we added an addition column *is_delay* column that contains a boolean variable returning True if the flight was delayed. Now we want to look at the delay time distribution by: *Month*, *Reporting_Airline*, and *Origin_Airport*.
+
+First, we look at the month distribution. We see that the total number of flights is considerably higher in December and January. We presume that this is due to traveling around Christmas times. However, when we look at the percentage of delayed flights, as well as the average flight delay time, we see the most delays during the summer: June, July, and August. This is a common time for family trips and vacation travels. See Figure 2 and 3 in Appendix.
+
+Second, we look at the airline distribution. We see that Delta and Endeavor Air have the lowest flight delay rate. Both have rate less than 30%. Delta and Alaska Airlines have the lowest mean arrival delay time. Both are about 1 min. Delta stands out when we evaluate the delay time distribution with respect to airlines. See Figure 4 and 5 in Appendix.
+
+Finally, we look at the airport distribution. We see that among the top 10 largest airports, the delay time distributes pretty evenly. *DFW* (Dallas) and *ORD* (Chicago) might have a slightly higher rate of delay and higher average delay time. See Figure 6 and 7 in Appendix.
 
 ### Feature engineering
 We listed several most important feature engineering steps as below:
@@ -85,3 +100,11 @@ We will continue to work on the following area to improve the model:
 6. Run Feature Selection or PCA before training to reduce data size and increase result interpretability.
 
 We will also compare the result of our two models and see if we can shorten the gap in accuracy between predictions using short-term and long-term information. Our desired goal is to have a model that can predict delay using only long-term features and is as good as the one using departure delay.
+
+### Appendix
+![Figure 2](images/img_2.jpg)
+![Figure 3](images/img_3.jpg)
+![Figure 4](images/img_4.jpg)
+![Figure 5](images/img_5.jpg)
+![Figure 6](images/img_6.jpg)
+![Figure 7](images/img_7.jpg)
