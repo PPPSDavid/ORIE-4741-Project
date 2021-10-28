@@ -17,7 +17,7 @@ We further decided to narrow our project to an analysis of all flights taking of
 #### Weather
 Our weather data records the start and end times of severe precipitation events recorded by different airports. To avoid future bias and to keep our project manageable, we decided to only consider the **weather condition at origination of a flight during its expected departure time** into consideration since it is hard to know the “predicted” destination weather. We do plan to explore how to include more weather information of the destination in the full report.
 
-### Null-values
+#### Null-values
 We listed most relevant missing value features and their percentageas below.
 | Feature  | description                | # NA  | Percentage in 9142933 data |
 | -------- | -------------------------- | ----- | -------------------------- |
