@@ -38,11 +38,11 @@ Note that we found the correlation between *ArrDelay* and *DepDelay* is .91, ind
 
 To help with our further analysis, we added an addition column *is_delay* column that contains a boolean variable returning True if the flight was delayed. Now we want to look at the delay time distribution by: *Month*, *Reporting_Airline*, and *Origin_Airport*. *(See Appendix)*
 
-First, we look at the month distribution. We see that the total number of flights is considerably higher in December and January. We presume that this is due to traveling around Christmas times. However, when we look at the percentage of delayed flights, as well as the average flight delay time, we see the most delays during the summer: June, July, and August. This is a common time for family trips and vacation travels. See Figure 2 and 3 in Appendix.
+First, we look at the month distribution. We see that the total number of flights is considerably higher in December and January. We presume that this is due to traveling around Christmas times. However, when we look at the percentage of delayed flights, as well as the average flight delay time, we see the most delays during the summer: June, July, and August. This is a common time for family trips and vacation travels.
 
-Second, we look at the airline distribution. We see that Delta and Endeavor Air have the lowest flight delay rate. Both have rate less than 30%. Delta and Alaska Airlines have the lowest mean arrival delay time. Both are about 1 min. Delta stands out when we evaluate the delay time distribution with respect to airlines. See Figure 4 and 5 in Appendix.
+Second, we look at the airline distribution. We see that Delta and Endeavor Air have the lowest flight delay rate. Both have rate less than 30%. Delta and Alaska Airlines have the lowest mean arrival delay time. Both are about 1 min. Delta stands out when we evaluate the delay time distribution with respect to airlines.
 
-Finally, we look at the airport distribution. We see that among the top 10 largest airports, the delay time distributes pretty evenly. *DFW* (Dallas) and *ORD* (Chicago) might have a slightly higher rate of delay and higher average delay time. See Figure 6 and 7 in Appendix.
+Finally, we look at the airport distribution. We see that among the top 10 largest airports, the delay time distributes pretty evenly. *DFW* (Dallas) and *ORD* (Chicago) might have a slightly higher rate of delay and higher average delay time.
 
 ### Feature engineering
 We listed several most important feature engineering steps as below:
