@@ -12,4 +12,6 @@ In this project, we decided to investigate ways to predict US domestic flight de
 and see if we can achieve accurate, interpretable results under both situations. We will use data from 2016-2020 as we believe the aviation industry is constantly evolving and old data may be outdated. We will also try to use both air traffic data and weather data to increase model expressiveness.
 
 Our findings could help passengers and airlines to optimize their schedules and reduce the inconvinence of flight delays.
-
+## File Glossary
+1. XXX_with_tuning_10_with_10: Individual file containing code for different model
+2. Feature Engineering... : Feature Engineering File
