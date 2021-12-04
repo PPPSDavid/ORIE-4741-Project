@@ -28,7 +28,7 @@ We listed most relevant missing value features and their percentageas below.
 For *DepDelay*, missing values are due to take off on time so we fill them with 0. For *ArrDelay* null values, if the flight is diverted, the delay information is recorded in *DivArrDelay*, otherwise, it's due to arrive on time; therefore we fill with 0 and values from *DivArrDelay* correspondingly. We removed rows without *ArrTime* as they are corrupted data that can’t be used for training.
 
 ### Exploratory Data Analysis
-We first look at the *ArrDelay* column since this is the one we want to predict. There are around 9 million data points. The average delay time of all flights is about 4 minutes, of which 37% of of the total flights were delayed. Negative delay time indicates that the flight arrived before the planned arrival time.
+We first look at the *ArrDelay* column since this is our response variable. There are around 9 million data points. The average delay time of all flights is about 4 minutes, of which 37% of of the total flights were delayed. Negative delay time indicates that the flight arrived before the planned arrival time.
 
 The following graph shows the distribution of arrival time delay in the [-250, 250] time interval.
 
